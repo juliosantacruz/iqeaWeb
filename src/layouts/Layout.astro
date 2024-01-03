@@ -1,7 +1,7 @@
 ---
 interface Props {
-	title: string;
-	description?:string
+  title: string;
+  description?: string;
 }
 
 const { title, description } = Astro.props;
@@ -9,49 +9,52 @@ const { title, description } = Astro.props;
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content={description} />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
 </html>
 <style is:global>
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
-		background-size: 224px;
-	}
-	body{
-		margin:0;
-		padding: 0;
-		box-sizing: border-box;
-	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
-	}
+  @import url("https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap");
+
+  :root {
+    color-scheme: dark;
+    --PrimaryTextColor: #ffffff;
+    --PrimaryBgColor: #0B0C0F;
+
+    --AccentBgColor: #1d1d1d;
+  }
+  html {
+    font-family: "Merriweather Sans", sans-serif, ui-monospace, Menlo, Monaco,
+      "Cascadia Mono", "Segoe UI Mono", "Roboto Mono", "Oxygen Mono",
+      "Ubuntu Monospace", "Source Code Pro", "Fira Mono", "Droid Sans Mono",
+      "Courier New", monospace;
+    background: var(--PrimaryBgColor);
+  }
+  body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+  }
+  h2{
+    font-size: 40px;
+  }
+
+  .canvas {
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+    margin: 100px 150px 50px;
+    height: 100%;
+
+    background: var(--AccentBgColor);
+  }
 </style>

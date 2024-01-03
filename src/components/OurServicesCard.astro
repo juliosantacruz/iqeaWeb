@@ -1,0 +1,45 @@
+---
+import { Image } from 'astro:assets';
+interface Props {
+	title: string;
+	body: string;
+	href?: string;
+  image:string;
+}
+
+const { href, title, body, image } = Astro.props;
+---
+
+<article class="card">
+  <img src={image} class="icon" alt={`${title}-icon`}/>
+  <div class="cardContent">
+    <h3>{title}</h3>
+    <p>{body}</p>
+
+  </div>
+</article>
+
+
+<style>
+  .card{
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    /* gap: 20px; */
+    margin: 20px 0;
+
+    .icon{
+      width: 40px;
+      border: 1px solid white;
+      border-radius: 4px;
+      padding: 5px;
+    }
+    .cardContent{
+      margin: 10px 0;
+      width: 100%;
+      h3, p{
+        margin: 8px 0;
+      }
+    }
+  }
+</style>

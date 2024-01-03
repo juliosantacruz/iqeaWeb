@@ -1,0 +1,127 @@
+---
+import Card from "../components/Card.astro";
+import OurServicesCard from "../components/OurServicesCard.astro";
+import aguaPotable from "../assets/icons/aguaPotable.svg"
+import aguaResidual from "../assets/icons/aguaResidual.svg"
+import estudiosIng from "../assets/icons/engineerService.svg"
+
+import imgH1 from "../assets/servicios/ImgHt1.jpg";
+import imgH2 from "../assets/servicios/ImgHt2.jpg";
+import imgV1 from "../assets/servicios/ImgVt1.jpeg";
+import imgV2 from "../assets/servicios/ImgVt2.jpg";
+
+import { Image } from "astro:assets";
+---
+
+
+
+
+<section class="OurServices">
+  <div class="canvas">
+
+    <div class="header">
+      <h2>
+        NUESTROS SISTEMAS DE TRATAMIENTO
+      </h2>
+      <p>
+        La principal especialidad de IQEA dentro del área de servicios son los proyectos “llave en mano” para el tratamiento de agua o aguas residuales. Para ello utilizamos combinaciones de tecnologías en la realización de proyectos maestros en conjunto para tratar el agua.
+      </p>
+    </div>
+
+    <div class="content">
+      <div class="leftColumn">
+        <OurServicesCard image={aguaPotable.src} title="Tratamiento de Agua Potable" body="Potabilización, Purificación, Filtración fina, Ultrafiltración, Nanofiltración, Osmosis inversa."/>
+
+        <OurServicesCard image={aguaResidual.src} title="Tratamiento Agua Residual" body="Biofiltración, Lodos activados, Electrocoagulación, Tratamiento fisicoquímico, agua pluvial y terciario."/>
+
+        <OurServicesCard image={estudiosIng.src} title="Estudio de Ingenieria" body="Riesgo e impacto ambiental, Uso de suelo, Tramites de conexión y descargade agua, Optimización de recursos, Eficiencia de procesos"/>
+      </div>
+      <div class="rightColumn">
+        <div class="galleryColumn">
+          <div class="imageA">
+            <Image src={imgH1} alt="galleryImage" />
+          </div>
+          <div class="imageB">
+            <Image src={imgV1} alt="galleryImage" />
+          </div>
+        </div>
+        <div class="galleryColumn">
+          <div class="imageB">
+            <Image src={imgH2} alt="galleryImage" />
+          </div>
+          <div class="imageA">
+            <Image src={imgV2} alt="galleryImage" />
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<style>
+  .OurServices{
+    background-color: var(--PrimaryBgColor);
+
+
+  }
+
+  .header{
+    text-align: center;
+    h2{
+      margin:0;
+    }
+  }
+  .content{
+    display: flex;
+    justify-content: space-around;
+    .leftColumn{
+      width: 45%;
+
+    }
+
+    .rightColumn {
+        width: 50%;
+        height: 100%;
+        max-height: 600px;
+
+        display: flex;
+        flex-direction: row;
+
+        gap: 10px;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+        .galleryColumn {
+          width: 50%;
+          max-width: 300px;
+          // height: 100%;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+
+          .imageA {
+            width: 100%;
+            height: 35%;
+            background: #d65959;
+            // margin: 20px;
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+          }
+          .imageB {
+            width: 100%;
+            height: 60%;
+            background: #c159d6;
+            // margin: 20px;
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+          }
+        }
+      }
+  }
+</style>
