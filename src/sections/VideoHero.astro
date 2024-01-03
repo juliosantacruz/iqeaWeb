@@ -1,0 +1,63 @@
+---
+import video from "/assets/video/background_video_1.mp4";
+import video2 from "../assets/video/videoTest1_b.mp4";
+import video3 from "../assets/video/background_video_yt.mp4";
+---
+
+<section class="Hero">
+  <div class="videoHero">
+    <video
+      class="leVideo"
+      src={video2}
+      autoplay
+      loop
+      muted
+      style="clip-path: polygon(100% 0, 100% 95%, 50% 100%, 0 95%, 0 0);"
+    ></video>
+
+  </div>
+  <div class="heroData">
+
+      <h1>IQEA Ingenieria</h1>
+      <p>
+        Limpiamos el planeta, tenemos experiencia diseniando y construyendo
+        sistemas de tratamiento de agua y procesos, resolviendo los retos mas
+        complejos, contamos con un portafolio de soliciones concretas para tu
+        proyecto
+      </p>
+
+  </div>
+</section>
+
+<style>
+  .videoHero {
+    width: 100vw;
+    position: absolute;
+  }
+
+  .leVideo {
+    width: 100vw;
+    height: auto;
+  }
+  .heroData {
+    background-color: rgba(0, 0, 0, 0.25);
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.25);
+    position: relative;
+    left: 20%;
+    position: relative;
+    width: 60%;
+    height: 100%;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    h1 {
+      font-size: 40px;
+      margin: 0;
+    }
+    p {
+      font-size: 26px;
+      margin: 0;
+      line-height: 40px;
+    }
+  }
+
+</style>
