@@ -1,0 +1,43 @@
+---
+import { Image } from 'astro:assets';
+interface Props {
+	title: string;
+	body: string;
+	image?: string;
+}
+
+const { image, title, body } = Astro.props;
+---
+
+<article class="statsCard">
+  <div class="image">
+    <img src={image} alt="stats" height={120} width={120} />
+      <div class="title">
+        <h2>{title}</h2>
+      </div>
+      <div >
+        <p class="subtitle">{body}</p>
+      </div>
+
+  </div>
+
+</article>
+
+<style>
+  .subtitle{
+    animation: 3s linear 1s infinite running slidein;
+
+    animation-name: move;
+  animation-iteration-count: infinite;
+  animation-duration: 3s;
+
+  border-radius: 10px;
+  position: relative;
+  }
+
+  @keyframes move {
+  0%   { left: 0px; }
+  50%  { left: 200px; }
+  100% { display:none; }
+}
+</style>

@@ -1,27 +1,26 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import AboutUs from '../sections/AboutUs.astro';
-import OurServices from '../sections/OurServices.astro';
-import VideoHero from '../sections/VideoHero.astro'
-import Stats from '../sections/Stats.astro'
-
+import Layout from "../layouts/Layout.astro";
+import AboutUs from "../sections/AboutUs.astro";
+import OurServices from "../sections/OurServices.astro";
+import VideoHero from "../sections/VideoHero.astro";
+import Stats from "../sections/Stats.astro";
 ---
 
-<VideoHero/>
 <Layout title="IQEA Ingenieria" description="Iqea es una compania :D">
-	<main>
+  <main>
+    <VideoHero />
 
-  <OurServices/>
-    <AboutUs/>
-    <Stats/>
-	</main>
+    <OurServices />
+    <AboutUs />
+    <Stats />
+  </main>
 </Layout>
 
 <style>
-	main {
-		/* max-width: calc(100% - 2rem);
+  main {
+    /* max-width: calc(100% - 2rem);
 		color: white;
 		font-size: 20px;
 		line-height: 1.6; */
-	}
+  }
 </style>
