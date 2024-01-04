@@ -1,0 +1,228 @@
+---
+import { Image } from "astro:assets";
+import logoIqea from "../assets/iqea_logo.png"
+---
+
+<header>
+  <nav>
+    <nav class="navbar">
+      <a href="#">
+        <div class="iqeaLogo">
+          <Image src={logoIqea} alt="logo" class="logoIqea" />
+        </div>
+      </a>
+      <div class="movilMenu">
+        <!-- <button onClick={handlerMenu} class="buttonMenu"> -->
+          <!-- <IconMenu class="hamburger" /> -->
+        <!-- </button> -->
+      </div>
+
+      <ul class="navLinks">
+
+        <li class="nav-item">
+          <a href="/contacto" class="navLink" >
+            Contacto
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/contacto" class="navLink" >
+            Contacto
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/contacto" class="navLink" >
+            Contacto
+          </a>
+        </li>
+
+      </ul>
+    </nav>
+  </nav>
+</header>
+
+
+<style>
+header {
+  // margin: 30px auto;
+  background-color: var(--navbarBgColor);
+  box-shadow:var(--box-shadow-navbar);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  .navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: var(--nav-size);
+    padding: 0 var(--paddingDesktop);
+    margin: 0 auto;
+    max-width: var(--max-width);
+    color: var(--navbarTextColor);
+
+
+    z-index: 100;
+    /* //   margin: 0 0 5px 0; */
+
+    .logoIqea {
+      width: auto;
+      height: calc( var(--nav-size) - 40px);
+      background-color: rgb(255, 255, 255);
+      padding: 10px;
+      border-radius: 4px;
+      box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    }
+    .movilMenu {
+      display: none;
+    }
+    .navLinks {
+      display: flex;
+      height: var(--nav-size);
+      align-items: center;
+      li {
+        list-style: none;
+
+        .navLink {
+          margin: 0 5px;
+          padding: 15px 10px ;
+          height: 100%;
+        }
+        .active {
+          border-bottom: 2px solid var(--navbarTextColor);
+        }
+      }
+    }
+  }
+
+/* @include media-down(lg){
+  .navbar{
+    padding: 0 var(--paddingDesktop);
+
+    .logoIqea{
+      width: 120px;
+
+    }
+    .navLinks{
+      li{
+        .navLink{
+          font-size: var(--navbarTextSize);
+          margin: 0  10px;
+          padding: 15px 10px ;
+
+        }
+      }
+    }
+  }
+}
+  @include media-down(md) {
+    .navbar {
+      align-items: center;
+      height: 60px;
+      padding: 0 var(--paddingDesktop);
+
+      background-color: var(--navbarBgColor);
+      color: var(--navbarTextColor);
+
+      box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.25);
+      z-index: 100;
+      //   margin: 0 0 5px 0;
+
+      .logoIqea {
+        width: 100px;
+        height: auto;
+        // background-color: white;
+        padding: 6px;
+        border-radius: var(--border-radius-sm);
+        // box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+      }
+      .navLinks {
+        display: flex;
+
+
+        li {
+          list-style: none;
+          width: 100%;
+          .navLink {
+            margin: 0 ;
+          }
+          .active {
+            border-bottom: 2px solid var(--navbarTextColor);
+          }
+        }
+      }
+    }
+  }
+
+  @include media-down(sm) {
+    .navbar {
+
+      flex-direction: row;
+
+      .movilMenu {
+        display: flex !important;
+        position: absolute;
+        top: 0;
+        right: 20px;
+        height: 40px;
+
+        .buttonMenu {
+          border: none;
+          background: none;
+          outline: none;
+          box-shadow: none;
+          height: 60px;
+          .hamburger {
+            height: 100%;
+            width: auto;
+          }
+        }
+      }
+      .navLinks {
+        display: flex !important;
+        flex-direction: column;
+        justify-content: flex-start;
+        position: fixed;
+        top: 60px;
+        left: 0;
+        // width: 50vw;
+        // max-width: 80vw;
+        width: 100vw;
+        height: calc(100vh - 60px);
+
+        background-color: var(--navbarBgColor);
+        backdrop-filter: blur(18.7px);
+        -webkit-backdrop-filter: blur(18.7px);
+
+        transition: transform 0.3s ease-in-out;
+        transform: translate(-110%);
+        box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.25);
+
+        z-index: 100;
+        text-align: center;
+        padding: 0 20px;
+
+        li {
+          padding: 20px 0;
+          a{
+            width: 80%;
+          }
+        }
+        li:hover{
+          background-color: rgb(216, 216, 216);
+        }
+      }
+      .openMenu {
+        transform: translate(0);
+      }
+    }
+    .arrow{
+      display: none;
+    }
+    .dropdown{
+      display: none;
+    }
+  } */
+}
+
+</style>
